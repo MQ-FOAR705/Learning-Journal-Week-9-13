@@ -1,0 +1,278 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+    }
+
+\title{Learning Journal: Week 9-13}
+\author{Sophie Avard}
+\date{October 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+
+
+\section{User Story 4}
+\subsection{Intention}
+Add a tool to Zotero to automatically add files library.
+
+\subsection{Action}
+\begin{enumerate}
+    \item Go to Chrome Web Store and search for Zotero 
+    \item Click the 'add to Chrome' button 
+    \item Login via the connector using my Zotero account
+    \item Click pdf button on top right of screen to save metadata and pdf straight into Zotero
+\end{enumerate}
+\subsection{Error}
+No error but it is hard to locate PDF's when downloaded as the file name is often hard to read. 
+
+\section{User Sotry 4}
+\subsection{Intention}
+Add a tool to Zotero to automatically change the name of the PDF's.
+\subsection{Action}
+\begin{enumerate}
+    \item Install ZotFile: \href{http://zotfile.com/#features}{http://zotfile.com/features}  
+    \item In Zotero go to tools - Add-ons - Tools for all Add-ons - Install Add-on from file - selection the downloaded .xpi file
+    \item Change the source folder for attaching new files: Tools - ZotFile Preferences - set to User/sophieavard/Downloads
+    \item In Renaming Rule tab: Click 'use Zotero to rename' and format item types as: \verb|author lastname_year_title| (see image below)
+\end{enumerate}
+   \includegraphics[width=12cm]{zotfile.png}
+\subsection{Error}
+NA. 
+\section{User Story 2}
+\subsection{Intention}
+Retrieve metadata from Zotero in a report format. 
+\subsection{Action}
+\begin{enumerate}
+\item Select items to be included in metadata report
+\item Right click - click 'generate report for items' 
+\end{enumerate}
+\subsection{Error}
+No error but report isn't very flexible. Doesn't allow me to edit the metadata. 
+
+\section{User Story 2}
+\subsection{Intention}
+Add a tool to help make metadata report more flexible. 
+\subsection{Action}
+\begin{enumerate}
+    \item Download Report Customiser for Zotero: \href{https://github.com/retorquere/zotero-report-customizer}{Zotero Report Customiser}
+    \item In Zotero click toools - Add-ons - Extensions
+    \item Click on the gear in the top-right and choose 'install add-on from file'
+    \item Choose the .xpi that was just downloaded and click 'Install'
+    \item Re-start Zotero
+\end{enumerate}
+Produce report:
+\begin{enumerate}
+    \item Select items to be included in report
+    \item right click - click 'generate report for items' 
+    \item Click edit button in top left corner 
+    \item Edit metadata report (See image below)
+\end{enumerate}
+\includegraphics[width=12cm]{metadata.png}
+
+\section{User Story 8}
+\subsection{Intention}
+Produce a table/graph to help draw connections and relationships between items. Download ZotNet tool to allow me to see relationships and calculate basic statistics. \\
+\textbf{ZotNet}: \href{https://www.exitsantacruz.com/zotnet/zotnet.php}{https://www.exitsantacruz.com/zotnet/zotnet.php}
+\subsection{Action}
+\begin{enumerate}
+    \item Download NetDraw to open Zotnet analysis: \href{https://sites.google.com/site/netdrawsoftware/home}{NetDraw}
+    \item Click 'Installation Package'
+    \item Follow the prompts on the screen 
+\end{enumerate}
+\subsection{Error}
+Download didn't work.
+
+\section{User Story 8}
+\section{Intention}
+Download and install UCINET which will automatically install NetDraw.
+\section{Action}
+\begin{enumerate}
+    \item Go to: \href{https://sites.google.com/site/netdrawsoftware/home}{NetDraw}
+    \item Click UCINET
+    \item Download 32-bit Installation package 
+    \item Read installation notes at bottom
+\end{enumerate}
+\section{Error}
+Installation notes state that UCINET cannot be run on Mac. Need to use a Windows emulator to run UCINET. 
+
+\section{User Story 8}
+\subsection{Intention}
+Download Wine for mac so that I can run UCINET on my Mac. 
+\subsection{Action}
+\begin{enumerate}
+\item Download UCINET and save to Desktop. The url for this is: \href{https://sites.google.com/site/ucinetsoftware/downloads}{UCINET Software}
+\item Install X11: Go to \href{https://www.xquartz.org}{XQuartz} and download the latest version. 
+    \item Download: \href{http://winebottler.kronenberg.org}{WineBottler1.7.37} 
+    \item Follow installation prompts then add Wine and WineBottle into Applications folder.
+\end{enumerate}
+To Run WineBottle:
+\begin{enumerate}
+    \item Find WineBottle in Applications
+    \item Go to 'Advanced' and under 'Program Installation' click 'select file'
+\end{enumerate}
+\section{Error}
+WineBottle unexpectedly closed and this error message appeared:\\
+\includegraphics[width=12cm]{WineBottle.png}
+
+\section{User Story 8}
+\subsection{Intention}
+Download Version 1.8.6 of WineBottle to see if it works.
+
+\subsection{Action}
+\begin{enumerate}
+    \item Go to: \href{http://winebottler.kronenberg.org}{http://winebottler.kronenberg.org}
+    \item Click 'Winebottler 1.8.6 Stable'
+    \item Click 'Skip Ad' in top right corner 
+    \item Once installed, add Wine and WineBottler to Applications
+\end{enumerate}
+Try to run WineBottler:
+\begin{enumerate}
+    \item Open spotlight - search WineBottler 
+    \item Click the application and then click 'Advanced' 
+    \item Under 'Program Installation' click 'selection file' and select 'Setup32UCI6685.exe' on Desktop
+    \item Under 'Winetricks' search 'mdac28' and select it.
+    \item Click install and follow prompts
+    \item Once installation is finished it asks which file is my 'Startfile' - select 'Program Files/Analytic Technologies/Uci6.exe'
+\end{enumerate}
+\section{Error}
+Still can't open NetDraw.
+
+\section{User Story 8}
+\subsection{Intention}
+Try use to Paper Machines add-on instead. Link here: \href{http://papermachines.org/install/}{Paper Machines}
+
+\subsection{Action}
+\begin{enumerate}
+    \item Click the link to install 
+    \item Open Zotero
+    \item Click tools - add-ons - install new add on from file 
+    \item Click Paper Machine download
+\end{enumerate}
+
+\subsection{Error}
+Got error message. Did not work. 
+
+\section{User Story 8}
+\section{Intention}
+See if Zotero Voyant export tool can visualise connections and relationships. Note, VoyantServer allows you to handle large texts without the connection timing out. 
+
+\section{Action}
+Link: \href{http://docs.voyant-tools.org/resources/run-your-own/voyant-server/}{Voyant Export}
+\begin{enumerate}
+    \item Download Java
+    \item Download VoyantServer.zip file 
+    \item Run server by double clicking on download
+    \item Voyant control panel will appear (see image below)
+\end{enumerate}
+\includegraphics[width=12cm]{voyantserver.png}
+
+\begin{enumerate}
+    \item VoyantServer will automatically launch in browser. 
+    \item Right click on collection then click 'export collection to voyant'
+    \item Save zip file to desktop as 'Bali.zip'
+    \item Open Voyant and upload Bali.zip file to Voyant. 
+\end{enumerate}
+NOTE: List of Voyant tools: \href{https://voyant-tools.org/docs/#!/guide/tools}{Here}\\
+\includegraphics[width=15cm]{voyant.png}
+
+\subsection{Error}
+None.
+
+\section{Hypothes.is}
+\subsection{Intention}
+Text Hypothes.is to see if it is better than Voyant.
+\subsection{Action}
+\begin{itemize}
+    \item Go to Hypothes.is website
+    \item Create login
+    \item Upload pdf 
+    \item highlight pdf 
+    \item annotate pdf
+    \item save 
+\end{itemize}
+\subsection{Error}
+No error but looks difficult to export. Exporting is not essential for PoC but would be useful. After doing some research apparently you can import annotations into OpenSemantic Desktop Search. 
+
+\section{Following meeting with Brian}
+\subsection{Intention}
+Try to use OpenSemantics for searching texts and tagging. 
+\subsection{Action}
+\begin{enumerate}
+    \item Download VirtualBox: \href{https://www.virtualbox.org}{https://www.virtualbox.org}
+    \item Download OpenSemantics.org: \href{https://www.opensemanticsearch.org}{https://www.opensemanticsearch.org}
+    \item Open VirtualBox 
+    \item Click import 
+    \item Select OpenSemantics file 
+    \item Double click OpenSemantics 
+\end{enumerate}
+\subsection{Error}
+When I tried to launch OpenSemantic I got a message saying that I needed a login and password. 
+
+\section{OpenSemantic Desktop Search }
+\subsection{Intention}
+Attempt to fix previous error by re-downloading and following the manual again.
+\subsection{Action}
+\begin{enumerate}
+    \item Open VirtualBox
+    \item Download \verb|open-semantic-desktop-search_19.07.19.ova|: \href{https://www.opensemanticsearch.org}{https://www.opensemanticsearch.org}
+    \item Start VirtualBox 
+    \item Click 'file'
+    \item Click 'import appliance'
+    \item Choose the downloaded open-semantic-desktop-search file.
+    \item Click settings 
+    \item Click shared folders 
+    \item select folder with relevant files
+    \item double click OpenSemantic on left panel to start
+\end{enumerate}
+\subsection{Error}
+No error but tool ran extremely slowly. I Googled it and apparently VirtualBox is slow.
+
+\section{OpenSemantic Desktop Search}
+\subsection{Intention}
+Make sure that it can:
+\begin{itemize}
+    \item Tag sources
+    \item Search Sources
+    \item Import from Hypothes.is
+\end{itemize}
+\subsection{Action}
+\begin{enumerate}
+    \item Open VirtualBox
+    \item Make sure shared folder is the folder that contains my sources
+    \item Launch OpenSemantic 
+    \item Click on annotations and tagging 
+    \item add tag 
+    \item save (successful)
+    \item Go back to home page 
+    \item Click search
+    \item Search for word 'stress' (successful)
+    \item Go to Datasource 
+    \item Click Hypothesis
+    \item Click import
+    \item Go to Hypothes.is website \href{https://hypothes.is}{https://hypothes.is}
+    \item Click Settings
+    \item Click Developer
+    \item Copy API token
+    \item Go back to OpenSemantic
+    \item Paste API token 
+    \item Click import
+\end{enumerate}
+Note: more detailed steps are outlined in PoC Design.
+\subsection{Error}
+OpenSemantic seems to be able to successful search, tag and import from Hypothes.is. While there were no errors, the automatic tagging seemed to pick up the wrong words. Next time I will convert a pdf to .txt file to see if OpenSemantic is more efficient.
+
+\end{document}
