@@ -299,7 +299,7 @@ Code and coding below - test was successful.
 
 \includegraphics[width=10cm]{QCoder2.png}
 
-\includegraphics[width=10cm]{test.png}
+\includegraphics[width=10cm]{QCoder_coded.png}
 
 \subsection{Error}
 No error but \verb|<br>| appeared in the 'text' after items were coded. See if OpenRefine can clean the csv file.
@@ -317,5 +317,70 @@ Use OpenRefine to clean analysis produced by coding.
 \end{enumerate}
 
 \includegraphics[width=10cm]{openrefine.png}
+
+\subsection{Error}
+No error - followed instructions from class. 
+
+\section{pdf to text file}
+\subsection{Intention}
+Write command in mac terminal to coonvert pdf to text file.
+
+\subsection{Action}
+Instructions: \href{https://apple.stackexchange.com/questions/155250/trying-to-convert-pdf-to-text-for-free}{https://apple.stackexchange.com/questions/155250/trying-to-convert-pdf-to-text-for-free}
+
+Below is a screenshot of the code that I wrote to convert a pdf document to a text file. 
+
+\includegraphics[width=12cm]{pdftotext.png}
+
+\subsection{Error}
+I did not use cd to navigate to the directory that the pdf was in - so when I tried to use the pdftotext command it could not open the file. I then used cd to navigate to my Desktop and tried again. It successful saved a text file to my Desktop called \verb|'Fabian_2018.txt'|
+
+\section{Loop pdftotext command}
+\subsection{Intention}
+Use instructions on Unix Shell to loop pdftotext command for 3 documents
+\subsection{Action}
+Below is the command that I used:
+
+\includegraphics[width=5cm]{pdftotextloop.png}
+
+\subsection{Error}
+The first time I tried to run the command I inserted ./ before 'pdftotext'. I then got an error message. 
+
+\section{Move converted pdf's into different location}
+\subsection{Intention}
+Now that I have a command to convert pdf's to text, I want to be able to move all converted pdf's into a few folder. 
+
+\subsection{Action}
+Add mv command into loop to move all pdf's into a folder called converted. See command below:
+
+\includegraphics[width=10cm]{converted.png}
+
+\subsection{Error}
+No error. 
+
+\section{Change name of files}
+\subsection{Intention}
+Change the name of the files using a csv files.
+
+\subsection{Action}
+\begin{enumerate}
+    \item Create a excel spreadsheet
+    \item Save it as myfiles
+    \item for each row add \verb|"file_name"|,\verb|"new_file_name"|
+\end{enumerate}
+Use this script to run a test to see the output:
+
+\includegraphics[width=10cm]{echo_rename.png}
+
+Output looks correct, terminal shows that the script will use the 'mv' command to re-name particular files (see below).
+
+\includegraphics[width=10cm]{test.png}
+
+Now, change file names by removing 'echo' command from the above script.
+
+\subsection{Error}
+The echo command successfully showed that the files would be renamed. However, when removing 'echo' and trying to run the script it said that
+\verb|'rename My Heart Die in Me.pdf to Fabian_2018.pdf\r: No such file or directory'|
+
 
 \end{document}
