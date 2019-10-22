@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{listings}
 
 \hypersetup{
     colorlinks=true,
@@ -535,8 +536,42 @@ Create a bar plot showing the proportion of respondents in each village who are 
 \subsection{Error}
 None.
 
+\section{Work on PoC}
+
 \subsection{Intention}
+attempt to convert pdf to text file using R 
 
+\subsection{Action}
+create folder in director called 'pdfs'
+put pdfs in the folder
+In R write: 
+\begin{lstlisting}[language=R]
+#create variable called file.names
+file.names <- dir(path="pdfs", pattern =".pdf", full.names=TRUE)
 
+#create a for loop to convert pdf to text 
+for (file in file.names) {
+
+text <- pdf_text(file)
+}
+
+#create a variable called output.file of the text files
+output.file <- gsub("pdf", "txt",file.names)
+
+#write lines to a text file - this stepped failed
+writeLines(text, output.file)
+
+\end{lstlisting}
+
+Sources used to write this script:
+
+\begin{itemize}
+    \item \href{https://github.com/ropensci/pdftools}{https://github.com/ropensci/pdftools}
+    \item \href{http://www.endmemo.com/program/R/gsub.php}{http://www.endmemo.com/program/R/gsub.php}
+    \item \href{https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r/24702772470277}{https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r/24702772470277}
+\end{itemize}
+
+\subsection{Error}
+Worked with Brian for a few hours on this - still in the process of figuring out how to get a variable filename to output. 
 
 \end{document}
