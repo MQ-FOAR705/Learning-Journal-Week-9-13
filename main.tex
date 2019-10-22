@@ -382,5 +382,132 @@ Now, change file names by removing 'echo' command from the above script.
 The echo command successfully showed that the files would be renamed. However, when removing 'echo' and trying to run the script it said that
 \verb|'rename My Heart Die in Me.pdf to Fabian_2018.pdf\r: No such file or directory'|
 
+\section{Introduction to R}
+
+\subsection{Intention}
+Complete the exercise - What do you think is the current content of the object area acres? 
+
+\subsection{Action}
+I think that it will remain as 6.175.
+
+\subsection{Error}
+None.
+
+\subsection{Intention}
+Complete the exercise - create two variables (length and width) and assign them values. Add third variable (area) and give it a value based on the current values.
+
+\subsection{Action}
+I followed the steps in the exercise on data carpentry. Although I got different results.
+
+\subsection{Error}
+First error: I accidentally clicked the wrong key on my keyboard - R came back with an error message so I retyped it.
+
+Second error: the value of the area should have been 8 and I got 6.26=5
+\includegraphics[width=10cm]{length_width.png}
+
+\subsection{Intention}
+Exercise - Type ?round at the console and then look at the output in the Help pane. What other functions exist that are similar to round? How do you use the digits parameter in the round function?
+
+\subsection{Action}
+\begin{enumerate}
+    \item Ceiling - takes a single numeric argument x and returns a numeric vector containing the smallest integers not less than the corresponding element of x
+    \item Floor - returns a numeric vector containing the largest integers not greater than the corresponding elements of x
+    \item Trunc - returns a numeric vector containing the integers formed by truncating the values in x toward 0
+    \item Signif - rounds the values in its first argument to the specified number of significant digits
+\end{enumerate}
+
+\subsection{Error}
+NA
+
+\subsection{Intention}
+Exercise - what happens if we try to mix these types in a single vector?
+
+\subsection{Action}
+R converts them to all be the same type. Vectors can only be one data type.
+
+\subsection{Error}
+I had no clue what it was talking about - had to look at the solutions..
+
+\subsection{Intention}
+1. Using the vector of rooms, create a new vector with the NAs removed
+2. Use the function median() to calculate the median of the rooms vector 
+3. Use R to figure out how many households in the set use more than 2 rooms for sleeping
+
+\subsection{Action}
+\includegraphics[width=12cm]{rooms.png}
+
+\subsection{Error}
+As can be seen above, there were multiple errors in this exercise. However, I just followed the instructions, dont understand why the object wasnt found
+
+\section{Starting with Data}
+
+\subsection{Intention}
+Complete the exercise: 
+1. Create a data frame containing only the data in row 100 of the interviews dataset
+2. notice how nrow() gave you the number of rows in a data frame.
+3. use nrow() to extract the row that is in the middle of the data frame.
+4. combine nrow() with the - notation above to reproduce the behaviour of head(interviews)
+
+
+\subsection{Action}
+\includegraphics[width=12cm]{nrow.png}
+
+\subsection{Error}
+I was very lost with this exercise - I had to follow the solution. Dont really understand how this is useful for anthropological research.
+
+\subsection{Intention}
+Exercise - rename the levels of the factor to have the first letter in uppercase: "no", "undetermined", and "yes". Now recreate the barplot such that undetermined is last
+
+\subsection{Action}
+\includegraphics[width=12cm]{undetermined.png}
+
+\subsection{Error}
+NA
+
+\section{Introducing dplyr and tidyr}
+
+\subsection{Intention}
+Exercise - using pipes, subset the interviews data to include interviews where respondents were members of an irrigation association and retain only the columns affect conflicts, liv count and no meals 
+
+\subsection{Action}
+\includegraphics[width=12cm]{pipes.png}
+
+\subsection{Error}
+No error. But pipes might be useful for PoC if I can learn how to apply them to different packages.
+
+\subsection{Intention}
+Exercise - Create a new data frame from the interviews data that meets the following criteria: contains only the village column and a new column called total meals containing a value that is equal to the total number of meals served in the household per day on average. Only the rows where total meals is greater than 20 should be shown in the final data frame.
+
+\subsection{Action}
+\includegraphics[width=12cm]{mutate.png}
+
+\subsection{Error}
+NA
+
+\subsection{Intention}
+Exercise - how many households in the survey have an average of two meals per day? three meals per day? are there any other numbers of meals represented? 
+
+\subsection{Action}
+Answer: 2 = 52, 3 = 79. No 
+
+\subsection{Error}
+None. 
+
+\subsection{Intention}
+Exercise - Create a new data frame that has one column for each month and records TRUE or FALSE for whether each interview respondent was lacking food in that month.
+
+How many months were respondents without food if they did belong to an irrigation association? What about if they didnt?
+
+\subsection{Action}
+Answer: 2.64 and 2.31
+
+\subsection{Error}
+Not sure if my answer is correct.
+
+\section{Data Visualisation with ggplot2}
+
+
+
+
 
 \end{document}
