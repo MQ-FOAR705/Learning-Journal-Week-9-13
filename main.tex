@@ -574,4 +574,39 @@ Sources used to write this script:
 \subsection{Error}
 Worked with Brian for a few hours on this - still in the process of figuring out how to get a variable filename to output. 
 
+\subsection{Intention}
+Meet with Brian and fix the problem with the problem with the above script in R.
+
+\subsection{Action}
+After meeting with Brian he showed me my mistakes:
+\begin{enumerate}
+    \item I had 'file.names' in stead of 'file'
+    \item I needed to include print()
+\end{enumerate}
+
+New R script:
+\begin{lstlisting}[language=R]
+install.packages("pdftools")
+library(pdftools)
+
+file.names <- dir(path="pdfs", pattern =".pdf", full.names=TRUE)
+
+for (file in file.names) {
+  text <- pdf_text(file)
+
+  output.file <- gsub("pdf", "txt",file)
+  print(output.file)
+  print(file)
+  write(text, output.file)
+}
+\end{lstlisting}
+
+\subsection{Error}
+No error with the script. This process is now completed. Next I need to write a script in R that creates a path to my data. I need to make sure that the script can be used on other computers - thus, I cannot simply set it as my working directory. 
+
+
+
+
+
+
 \end{document}
