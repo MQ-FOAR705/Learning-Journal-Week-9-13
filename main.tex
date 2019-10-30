@@ -604,6 +604,43 @@ for (file in file.names) {
 \subsection{Error}
 No error with the script. This process is now completed. Next I need to write a script in R that creates a path to my data. I need to make sure that the script can be used on other computers - thus, I cannot simply set it as my working directory. 
 
+\section{Link Rstudio project with github repo}
+\subsection{Intention}
+Attempt to sync my PoC in R with guthub repo. For instructions on how to sync Github repo with existing project click \href{https://hansenjohnson.org/post/sync-github-repository-with-existing-r-project/}{here}
+
+\subsection{Action}
+Open terminal and run the following:
+\begin{lstlisting}[language=R]
+# move to the project directory
+cd Desktop/qcoder_analysis/my_project
+
+# initiate the upstream tracking of the project on the GitHub repo
+git remote add origin 
+https://github.com/MQ-FOAR705/Sophie-Avard-Proof-of-Concept.git
+
+# pull all files from the GitHub repo
+git pull origin master
+
+# set up GitHub repo to track changes on local machine
+git push -u origin master
+\end{lstlisting}
+
+Then open Rstudio and click the git tab and click commit. In the window that opens select the files to be synced on Github. Write a commit message and click push. This will send changes to the github repo. 
+
+\includegraphics[width=\textwidth]{review-git-commits.png}
+
+\subsection{Error}
+I got an error message saying that I needed to update my github email and username. So I opened terminal and ran the following script:
+\begin{lstlisting}[language=R]
+git config --global user.email "sophie.avard@hdr.mq.edu.au"
+git config --global user.name "Sophie Avard"
+\end{lstlisting}
+\includegraphics[width=\textwidth]{sync-poc-with-github.png}
+
+I opened Github and my Rstudio project was not in my rep - however it says in Rstudio that it has been committed to the correct repo. 
+
+
+
 
 
 
