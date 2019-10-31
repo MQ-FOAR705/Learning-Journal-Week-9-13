@@ -738,6 +738,71 @@ qcode(use_wd=TRUE)
 SCRIPT RAN SUCCESSFULLY (may have shed a tear haha).
 Now I need to add the pdf-to-text script to my workflow
 
+\section{Creating PoC Pipeline}
+\subsection{Intention}
+Write a script in Mac terminal to run my R scripts. 
+
+\subsection{Action}
+I navigated to the relevant directory and ran:
+\begin{lstlisting}[language=R]
+Rscript forloop.R 
+\end{lstlisting}
+
+\subsection{Error}
+I got the following error message. 
+
+\begin{lstlisting}[language=R]
+Error in contrib.url(repos, "source") : 
+  trying to use CRAN without setting a mirror
+Calls: install.packages -> contrib.url
+Execution halted
+\end{lstlisting}
+
+\subsection{Intention}
+Set the CRAN mirror in Rstudio 
+
+\subsection{Action}
+Followed the comments in Stack Overflow - click \href{https://stackoverflow.com/questions/8475102/set-default-cran-mirror-permanent-in-r}{here}
+
+In Rstudio, run: chooseCRANmirror(81) Then choose Australia.
+
+Also added repos to packages - see example below:
+\begin{lstlisting}[language=R]
+install.packages("pdftools", repos = "http://cran.us.r-project.org"
+\end{lstlisting}
+
+\subsection{Error}
+None.
+
+\subsection{Intention}
+Try to run Rscript from terminal again.
+
+\subsection{Action}
+Run: 
+\begin{lstlisting}[language=R]
+#!/bin/bash
+Rscript forloop.R
+\end{lstlisting}
+
+\subsection{Error}
+It worked! In order to run R from terminal you need to choose a CRAN mirror
+
+\includegraphics[width=\textwidth]{forloop-terminal-command.png}
+
+\subsection{Intention}
+Now try to run qcoder-analysis from terminal 
+
+\subsection{Action}
+\begin{lstlisting}[language=R]
+#!/bin/bash
+Rscript qcoder-analysis.R
+\end{lstlisting}
+
+\subsection{Error}
+Got the following error message:
+
+\includegraphics[width=\textwidth]{qcoder-terminal-error.png}
+
 
 
 \end{document}
