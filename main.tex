@@ -639,10 +639,104 @@ git config --global user.name "Sophie Avard"
 
 I opened Github and my Rstudio project was not in my rep - however it says in Rstudio that it has been committed to the correct repo. 
 
+\section{Import data into Rstudio for analysis}
+\subsection{Intention}
+Build a file path in R for qcoder analysis 
+
+\subsection{Action}
+\begin{lstlisting}[language=R]
+project_name = "my_project"
+file_name <- "Fabian_2018.txt"
+docs_df_path <-"my_project/data_frames/qcoder_documents_my_project.rds"
+codes_df_path <- "my_project/data_frames/qcoder_codes_my_project.rds"
+file_path <- "my_project/documents"
+dir("my_project/documents")
+
+read_documents_data(project_name = project_name)
+
+#This proves the data is "in" the system
+new_dataframe <- readRDS(docs_df_path)
+
+read_code_data(project_name = project_name)
+
+codes_dataframe <- readRDS(codes_df_path)
+
+qcode(use_wd=TRUE)
+
+\end{lstlisting}
+
+\subsection{Error}
+Brian helped me work on this script. We encountered a few errors which could not be fixed due to a bug in the package (eg. saving coded data for later use). 
 
 
+\section{Move txt files into Rstudio directory}
+\subsection{Intention}
+Now that I have completed the pdf-to-text script and have built a file path for the analysis I need to write a script to move the txt files into the directory that I have built a file path to. 
+
+\subsection{Action}
+For step by step instructions click \href{https://stackoverflow.com/questions/49593823/r-file-copy-function}{here}
+\begin{lstlisting}[language=R]
+#create path to diretory
+#create path to txt files within directory
+#copy txt files into qcoder_analysis directory
+
+rawPath <- "/Users/sophieavard/Desktop/pdf-to-text/txts"
+datafiles <- dir(rawPath, "*.txt", ignore.case = TRUE, all.files = TRUE)
+file.copy(file.path(rawPath, datafiles), file_path, overwrite = TRUE)
+\end{lstlisting}
+
+\subsection{Error}
+This script successful copied the two text files into the documents folder which is linked to my qcoder analysis. Now I need to test the entire script to make sure it runs smoothly. 
+
+\section{Test Script}
+\subsection{Intention}
+Run entire analysis script to make sure it runs smoothly.
+
+\subsection{Action}
+Run the following script:
+\begin{lstlisting}[language=R]
+library(qcoder)
+getwd()
+# create_qcoder_project("my_project")
+
+import_project_data(project = "my_project")
+
+project_name = "my_project"
+file_name <- "Fabian_2018.txt"
+docs_df_path <-"my_project/data_frames/qcoder_documents_my_project.rds"
+codes_df_path <- "my_project/data_frames/qcoder_codes_my_project.rds"
+file_path <- "my_project/documents"
+dir("my_project/documents")
 
 
+#create path to diretory
+#create path to txt files within directory
+#copy txt files into qcoder_analysis directory
+rawPath <- "/Users/sophieavard/Desktop/pdf-to-text/txts"
+datafiles <- dir(rawPath, "*.txt", ignore.case = TRUE, all.files = TRUE)
+file.copy(file.path(rawPath, datafiles), file_path, overwrite = TRUE)
+
+
+# TODO Make a for loop ala the pdf -> txt to add *all* documents
+# add_new_documents(file_name,
+#                   docs_df_path,
+#                   file_path)
+
+read_documents_data(project_name = project_name)
+
+#This proves the data is "in" the system
+new_dataframe <- readRDS(docs_df_path)
+
+read_code_data(project_name = project_name)
+
+codes_dataframe <- readRDS(codes_df_path)
+
+qcode(use_wd=TRUE)
+\end{lstlisting}
+
+\subsection{Error}
+SCRIPT RAN SUCCESSFULLY (may have shed a tear haha).
+Now I need to add the pdf-to-text script to my workflow
 
 
 
