@@ -803,6 +803,56 @@ Got the following error message:
 
 \includegraphics[width=\textwidth]{qcoder-terminal-error.png}
 
+\section{Try to run qcoder-analysis from terminal}
 
+\subsubsection{Intention}
+Find the line in the script that wont work.
+
+\subsection{Action}
+I commented out the line in the script that was getting an error message and ran the script through R. It seemed to still work (there must be another part of the script that is loading my data into R). I then tried to run it again in terminal but I got a different error message (see below).
+
+\subsection{Error}
+\includegraphics[width=\textwidth]{ui.png}
+
+After googling the error I then went through the qcoder shiny app code to try find the UI and server. I found the code and pasted it into my R script. However I am still getting the same error message. 
+
+\section{Push Overleaf to Github}
+
+\subsection{Intention}
+Push PoC files in overleaf to Github 
+
+\subsection{Action}
+\begin{lstlisting}[language=R]
+cd ~/Desktop
+mdkir overleaf 
+cd overleaf-project 
+git init git remote add overleaf
+https://git.overleaf.com/5d966d38a7445500019fbb21
+git pull overleaf master 
+
+#in Github repo copy git remote link 
+
+git remote add github
+https://github.com/MQ-FOAR705/Sophie-Avard-Proof-of-Concept.git
+git push github master 
+
+\end{lstlisting}
+
+\subsection{Error}
+It didn't push to overleaf so I added --force to the script. However, 'force' overwrites Github's entire history... Luckily I had saved my GitHub repository to my computer so Brian walked me through to steps on how to push it back to github. 
+
+\section{How to push to Github}
+\subsection{Intention}
+How to push files to Github using terminal 
+
+\subsection{Action}
+Add files to the Github repository: Sophie-Avard-Proof-of-Concept
+\begin{lstlisting}[language=R]
+cd Desktop/Sophie-Avard-Proof-of-Concept
+git add -A
+git commit -m "insert commit message here"
+git push 
+
+\end{lstlisting}
 
 \end{document}
