@@ -846,13 +846,29 @@ It didn't push to overleaf so I added --force to the script. However, 'force' ov
 How to push files to Github using terminal 
 
 \subsection{Action}
+
+Online source: \href{https://gist.github.com/jnaecker/da8c1846bc414594783978b66b6e8c83}{https://gist.github.com/jnaecker/da8c1846bc414594783978b66b6e8c83}
 Add files to the Github repository: Sophie-Avard-Proof-of-Concept
 \begin{lstlisting}[language=R]
 cd Desktop/Sophie-Avard-Proof-of-Concept
 git add -A
 git commit -m "insert commit message here"
 git push 
-
 \end{lstlisting}
+
+\includegraphics[width=12cm]{git-commit.png}
+
+\subsection{Error}
+None.
+
+\section{Create Pipeline}
+\subsection{Intention}
+Now that I have my R scripts I want to be able to run them through one script. Create a new project and see if I can edit the scripts to run within one working directory. 
+
+\subsection{Action}
+I created a new R project called proof-of-concept and inserted the pdf-to-text script. I then added the qcoder script but changed the paths to the data. I then ran the entire script.
+
+\subsection{Error}
+At first the data didnt come up in the shiny app but I ran it again it worked the second time. I now need to figure out how to set the working directory for someone else before they run the script. 
 
 \end{document}
