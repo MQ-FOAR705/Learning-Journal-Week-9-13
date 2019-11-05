@@ -863,12 +863,46 @@ None.
 
 \section{Create Pipeline}
 \subsection{Intention}
-Now that I have my R scripts I want to be able to run them through one script. Create a new project and see if I can edit the scripts to run within one working directory. 
+Now that I have my three R scripts I want to be able to run them through one script. I need to Create a new project and see if I can make the scripts to run within one working directory. 
 
 \subsection{Action}
-I created a new R project called proof-of-concept and inserted the pdf-to-text script. I then added the qcoder script but changed the paths to the data. I then ran the entire script.
+I created a new R project called proof-of-concept and inserted the pdf-to-text script. I then added the file path and qcoder scripts but changed the paths to the data. I then ran the entire script.
 
 \subsection{Error}
 At first the data didnt come up in the shiny app but I ran it again it worked the second time. I now need to figure out how to set the working directory for someone else before they run the script. 
+
+\section{Check that PoC runs smoothly}
+\subsection{Intention}
+Run PoC in R
+
+\subsection{Action}
+Run the entire script
+
+\subsection{Error}
+For some reason my file.copy function wont work. I have not touched the script and it has suddenly stopped moving my files into the correct directory. 
+
+\subsection{Intention}
+Try to fix error
+
+\subsection{Action}
+I realised that I had moved my folder into the directory linked to github and forgot to change the raw file path in my script.
+
+\subsection{Error}
+None.
+
+\section{Finishing touches on PoC}
+\subsection{Intention}
+Try to turn R script into a shiny app to make it easier to reproduce and use
+
+\subsection{Action}
+\begin{enumerate}
+    \item Create a Shiny account 
+    \item install.packages 'rsconnect'
+    \item Click publish 
+\end{enumerate}'
+\subsection{Error}
+It begins to publish and then a browser opens with the below error message:
+
+\includegraphics[width=\textwidth]{shiny-app.png}
 
 \end{document}
