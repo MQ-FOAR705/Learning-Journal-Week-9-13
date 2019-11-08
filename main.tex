@@ -895,6 +895,8 @@ None.
 Try to turn R script into a shiny app to make it easier to reproduce and use
 
 \subsection{Action}
+Firstly I got the UI and server script from qcoder and inserted it into my script
+
 \begin{enumerate}
     \item Create a Shiny account 
     \item install.packages 'rsconnect'
@@ -904,5 +906,27 @@ Try to turn R script into a shiny app to make it easier to reproduce and use
 It begins to publish and then a browser opens with the below error message:
 
 \includegraphics[width=\textwidth]{shiny-app.png}
+
+\section{POC}
+\subsection{Intention}
+Create a branch for me to experiment with creating a script that can clean the data from my qcoder project. I want write a script to add references to the output of the csv file.
+
+\subsection{Action}
+\begin{lstlisting}[language=R]
+cd Desktop/Sophie-Avard-Proof-of-Concept 
+#create new branch called clean_data
+git checkout -b clean_data
+#make sure I am in that branch 
+git branch -a 
+
+#add relevant files to the directory
+git add .
+git commit -m "added clean data file"
+git push origin clean_data 
+\end{lstlisting}
+
+\subsection{Error}
+No error
+
 
 \end{document}
